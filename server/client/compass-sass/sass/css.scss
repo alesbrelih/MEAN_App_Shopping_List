@@ -1,0 +1,151 @@
+/////////////////////////////////////////
+// Import variables
+////////////////////////////////////////
+@import "_base/_variables.scss";
+
+
+///////////////////////////////////////
+// default body style - bg,...
+//////////////////////////////////////
+
+body{
+    background-color: $background-body;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+    margin: 0px !important;
+    font-family: $default-font;
+    
+}
+
+.main-content{ //inner white content
+
+    //white bg
+    background-color: #eee;
+
+    //size
+    width: 960px;
+    min-height: 600px;
+    
+    //border styles
+    border-radius: 10px;
+    border: 2px solid $gray-dark;
+
+    //if needed for transformations
+    perspective: 1000px;
+
+    .main-title {
+
+        //main title centered
+        text-align: center;
+
+        h1{
+            //h1 color
+            color:$green-main;
+
+            position: relative;
+            span{
+                //hiding before line with background
+                background-color:$gray-light;
+                padding:5px;
+            }
+
+            &:before{ //line in the middle of title
+                content:"";
+                margin:0 auto;
+                left:0;
+                right:0;
+                top:50%;
+                position:absolute;
+                width:90%;
+                border-top: 2px solid $gray-dark;
+                z-index:-1;
+
+            }
+        }
+        
+    }
+    .main-body{ //main body
+        padding:10px 50px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+
+        ul{
+            list-style-type: none;
+            width:60%;
+            padding: 0px;
+
+            // :last-child{
+            //         border-bottom:none;
+            // }
+
+            li{
+                display: flex;
+                padding: 10px 10px;
+                // border-bottom: 1px solid $green-main;
+
+                
+                
+                .shop-item{
+                    text-transform: lowercase;
+                    font-size: 1.5em;
+                    flex-grow: 1;
+                }
+                
+                label{
+                    font-size:1.4em;
+                    cursor: pointer;
+
+                    input[type="checkbox"]{
+                        display:none;
+                        
+                        +.shop-confirm:before{
+                            font-family: $font-awesome;
+                            content:"\f096";
+                            font-style: normal;
+                            font-weight: normal;
+                            font-variant: normal;
+                            text-transform: none;
+                            line-height: 1;
+                            width:1em;
+                            color:$gray-dark;
+                            margin-right: 10px;
+                            display: inline-block;
+                            transform-origin: center;
+
+                        }
+                        &:checked+.shop-confirm:before{
+                            content:"\f14a";
+                            color:$green-main;
+
+                            // -webkit-animation: tick 300ms ease-in;
+                            animation:tick 300ms ease-in;
+                        }
+                    }
+                    
+                    
+                    
+                }
+            }
+        }
+    }   
+
+}
+
+
+@keyframes tick{
+    0%{
+        transform: scale(0);
+    }
+    90%{
+        transform:scale(1.3);
+    }
+    100%{
+        transform:scale(1.0);
+    }
+
+}

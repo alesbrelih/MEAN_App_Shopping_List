@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css?family=Asap");
+@import url("https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css");
+/* line 11, ../compass-sass/sass/css.scss */
+body {
+  background-color: #232323;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0px !important;
+  font-family: "Asap", sans-serif;
+}
+
+/* line 24, ../compass-sass/sass/css.scss */
+.main-content {
+  background-color: #eee;
+  width: 960px;
+  min-height: 600px;
+  border-radius: 10px;
+  border: 2px solid #777;
+  perspective: 1000px;
+}
+/* line 40, ../compass-sass/sass/css.scss */
+.main-content .main-title {
+  text-align: center;
+}
+/* line 45, ../compass-sass/sass/css.scss */
+.main-content .main-title h1 {
+  color: #04AB1D;
+  position: relative;
+}
+/* line 50, ../compass-sass/sass/css.scss */
+.main-content .main-title h1 span {
+  background-color: #eee;
+  padding: 5px;
+}
+/* line 56, ../compass-sass/sass/css.scss */
+.main-content .main-title h1:before {
+  content: "";
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  position: absolute;
+  width: 90%;
+  border-top: 2px solid #777;
+  z-index: -1;
+}
+/* line 71, ../compass-sass/sass/css.scss */
+.main-content .main-body {
+  padding: 10px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 77, ../compass-sass/sass/css.scss */
+.main-content .main-body ul {
+  list-style-type: none;
+  width: 60%;
+  padding: 0px;
+}
+/* line 86, ../compass-sass/sass/css.scss */
+.main-content .main-body ul li {
+  display: flex;
+  padding: 10px 10px;
+}
+/* line 93, ../compass-sass/sass/css.scss */
+.main-content .main-body ul li .shop-item {
+  text-transform: lowercase;
+  font-size: 1.5em;
+  flex-grow: 1;
+}
+/* line 99, ../compass-sass/sass/css.scss */
+.main-content .main-body ul li label {
+  font-size: 1.4em;
+  cursor: pointer;
+}
+/* line 103, ../compass-sass/sass/css.scss */
+.main-content .main-body ul li label input[type="checkbox"] {
+  display: none;
+}
+/* line 106, ../compass-sass/sass/css.scss */
+.main-content .main-body ul li label input[type="checkbox"] + .shop-confirm:before {
+  font-family: "FontAwesome";
+  content: "\f096";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  width: 1em;
+  color: #777;
+  margin-right: 10px;
+  display: inline-block;
+  transform-origin: center;
+}
+/* line 121, ../compass-sass/sass/css.scss */
+.main-content .main-body ul li label input[type="checkbox"]:checked + .shop-confirm:before {
+  content: "\f14a";
+  color: #04AB1D;
+  animation: tick 300ms ease-in;
+}
+
+@keyframes tick {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

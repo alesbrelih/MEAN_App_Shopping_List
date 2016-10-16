@@ -31,7 +31,7 @@ app.use(bodyParser.json())
 // Views folder
 //////////////////////////////////
 
-app.set("views",path.join(__dirname,"views"));
+app.set("views",path.join(__dirname,"client/app"));
 app.set("view engine","ejs");
 // specify that we want to render .html files using ejs renderfile
 app.engine("html",require("ejs").renderFile);
