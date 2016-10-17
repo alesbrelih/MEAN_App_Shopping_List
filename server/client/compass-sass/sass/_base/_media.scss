@@ -1,0 +1,119 @@
+@media screen and (max-width:900px) {
+
+    body{
+        font-size:15px;
+    }
+    .main-content{
+        .main-body{
+            .item-list{
+                ul{
+                    li{
+                        .shop-item{
+                                padding-left:4em;
+                            }
+                    }
+                }
+            }
+            .item-list-btns{
+                .btn-more-items{
+                                width:90%;
+                                }
+                            
+            }
+        }
+    }
+    
+}
+@media screen and (max-width:820px) {
+
+    .main-content{
+        .main-body{
+            .item-list{
+                ul{
+                    li{
+                        .shop-item{
+                                padding-left:3em;
+                            }
+                    }
+                }
+            }
+            
+            
+        }
+    }
+    
+}
+@media screen and (max-width:700px) {
+
+    .main-content{
+        .main-body{
+            .item-list{
+                ul{
+                    li{
+                        .shop-item{
+                                padding-left:2em;
+                            }
+                    }
+                }
+                .save-changes{
+                    .fa-4x{
+                        font-size:3em;
+                    }
+                }
+            }
+            .item-list-btns{
+                margin:25px;
+                .btn-more-items{
+                                width:100%;
+                                }
+                            
+            }
+        }
+    }
+    
+}
+@media screen and (max-width:600px) {
+
+    .main-content{
+        .main-body{
+            .item-list{
+                ul{
+                    li{
+                        .shop-item{
+                                padding-left:1em;
+                            }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+@media screen and (max-width:500px) {
+    body{
+        font-size:12px;
+    }
+    .main-content{
+        .main-title{
+            h1{
+                span{
+                    padding:10px;
+                }
+            }
+        }
+        .main-body{
+            padding:10px 30px 10px 10px;
+            .item-list{
+                ul{
+                    li{
+                        .shop-item{
+                                padding-left:0;
+                            }
+                    }
+                }
+            }
+            
+        }
+    }
+    
+}

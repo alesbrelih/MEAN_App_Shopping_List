@@ -1,0 +1,129 @@
+        .item-list-btns{
+            width:60%;
+
+            margin: 50px auto 50px auto;
+
+            text-align: center;
+
+            .btn-more-items{
+                display:inline-block;
+                position:relative;
+                background-color: $green-main;
+                border:2px solid $gray-dark;
+                border-radius: 10px;
+                width:50%;
+                height: 50px;
+                cursor:pointer;
+
+                transform-origin: center;
+                transition:all 150ms ease-in;
+
+                &:hover{
+                    transform:scale(1.05);
+                }
+                
+                span{
+                    color:white;
+                    position:absolute;
+                    top:50%;
+                    left:50%;
+                    transform:translate(-50%,-50%);
+                    font-size:1.4em;
+                    font-style: italic;
+                }
+            }
+        }
+
+        .item-list{
+            display:flex;
+            width:80%;
+
+            .save-changes{
+                width:15%;
+                font-family: $font-awesome;
+                position:relative;
+
+                i{
+                    position:absolute;
+                    color:$green-main;
+                    top:50%;
+                    right:0;
+                    transform:translate(100%,-50%);
+                    cursor: pointer;
+
+                    transform-origin:center;
+                    transition: all 150ms ease-in;
+                    
+                    &:hover{
+                       transform: translate(100%,-50%) scale(1.1);     
+                    }
+                }
+            }
+        
+            ul{
+                list-style-type: none;
+                
+                flex-grow:1;
+                padding: 0px;
+
+                // :last-child{
+                //         border-bottom:none;
+                // }
+
+                li{
+                    display: flex;
+                    padding: 10px 10px;
+                    // border-bottom: 1px solid $green-main;
+
+                    
+                    
+                    .shop-item{
+                        color:$gray-dark;
+                        text-transform: lowercase;
+                        font-size: 1.5em;
+                        flex-grow: 1;
+                        padding-left:5em;
+                        font-weight: bolder;
+                    }
+                    
+                    label{
+                        font-size:1.6em;
+                        cursor: pointer;
+                        text-transform: lowercase;
+                        
+                        color:$gray-dark;
+
+                        input[type="checkbox"]{
+                            display:none;
+                            
+                            +.shop-confirm:before{
+                                font-family: $font-awesome;
+                                content:"\f096";
+                                font-style: normal;
+                                font-weight: normal;
+                                font-variant: normal;
+                                text-transform: none;
+                                line-height: 1;
+                                width:1em;
+                                color:$gray-dark;
+                                margin-right: 10px;
+                                display: inline-block;
+                                transform-origin: center;
+
+                            }
+                            &:checked+.shop-confirm:before{
+                                content:"\f14a";
+                                color:$green-main;
+
+                                // -webkit-animation: tick 300ms ease-in;
+                                animation:tick 300ms ease-in;
+                            }
+                        }
+                        
+                        
+                        
+                    }
+                }
+            }
+        }
+
