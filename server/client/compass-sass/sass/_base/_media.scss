@@ -1,14 +1,22 @@
 @media screen and (max-width:900px) {
 
+    //font size scale down, since its all in em it all sizes down
     body{
+        
         font-size:15px;
     }
+
     .main-content{
+        //main content size shouldn't be static anymore
+        width:100%;
+        margin:5px;
+
         .main-body{
             .item-list{
                 ul{
                     li{
                         .shop-item{
+                                //padding for item names to buy
                                 padding-left:4em;
                             }
                     }
@@ -68,6 +76,19 @@
                                 }
                             
             }
+
+            //add - item PARTIAL all items TABLE column sizing
+            #new-items-list{
+                .table-column-1{
+                    width:50%;
+                }
+                .table-column-2{
+                    width:30%;
+                }
+                .table-column-3{
+                    width:20%;
+                }
+            }
         }
     }
     
@@ -112,7 +133,22 @@
                     }
                 }
             }
-            
+
+            // ADD - ITEM PARTIAL STYLES
+            .new-item-form{
+                flex-direction:column;
+                .item-input-submit{
+                    margin-top:10px;
+                }
+            }
+            .item-add-btns{
+                margin:10px auto;
+
+            }
+            h3{
+                align-self:center;
+                margin-left:0;
+            }
         }
     }
     

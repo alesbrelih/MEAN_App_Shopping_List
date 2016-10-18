@@ -1,36 +1,56 @@
-h3{
+//////////////////////////
+// new item heading
+/////////////////////////
+
+h3#new-item{
     margin:0px;
     color: $green-main;
     align-self: flex-start;
     font-style: italic;
     margin-left: 100px;
 }
-table{
+
+
+////////////////////////
+//new items table
+/////////////////////////
+
+table#new-items-list{
+    //sizing
     width:95%;
     margin-bottom:30px;
 
+    //hack for last row bottom border, because tr doesnt support border, but TD does
     tr:last-child{
         td{
             border-collapse: collapse;
             border-bottom: 2px solid $green-main;
         }
     }
+
+    //default TD style
     td{
         padding: 2.5px;
         text-align: center;
         color:$gray-dark;
         font-weight: bolder;
+
+        // edit / remove icons styles
         &.table-actions{
             text-align: center;
             font-size: 1.5em;
             line-height: 1.5em;
             i{
                 padding:0 2.5px;
+
+                //edit icon style on hover
                 &.action-edit:hover{
                 color:dodgerblue;
                 transform:scale(1.05);
                 cursor: pointer;
                 }
+                
+                //remove icon style on hover
                 &.action-remove:hover{
                     color:darkred;
                     transform:scale(1.05);
@@ -40,8 +60,9 @@ table{
             
         }
     }
+
+    //table headers - row style
     th{
-        
         background-color:$green-main;
         padding:5px;
         color:white;
@@ -49,6 +70,9 @@ table{
         
     }
     
+    /////////////////////////
+    // different widths for columns
+    ///////////////////////////
     .table-column-1{
         width:60%;
     }
@@ -60,6 +84,10 @@ table{
     }
 }
 
+////////////////////////////
+// new item form
+//////////////////////////
+
 .new-item-form{
     width:90%;
     margin-left:auto;
@@ -70,6 +98,7 @@ table{
     padding-top:10px;
     padding-bottom:10px;
     
+    //styles for all inputs
     .item-input-name{
         flex-grow: 5;
 
@@ -100,5 +129,36 @@ table{
             outline: none;
             border: 2px solid $green-main;
         }
+    }
+}
+
+///////////////////////////////////////
+//save / cancel button on bottom styles
+/////////////////////////////////////
+
+.item-add-btns{
+    margin: 30px auto;
+    width:90%;
+    text-align: center;
+
+    //cancel btn
+    .cancel-btn{
+        background-color: red;
+        border-radius: 10px;
+        padding:10px;
+        border:1px solid $gray-dark;
+        color:white;
+        font-size:1.05em;
+        width:30%;
+        margin-left: 5px;
+        cursor: pointer;
+        font-weight: bolder;
+    }
+    //submit btn
+    .submit-btn{
+        @extend .cancel-btn;
+        margin-right:5px;
+        background-color: $green-main;
+
     }
 }
