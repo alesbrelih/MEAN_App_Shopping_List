@@ -26,11 +26,17 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+//USAGE OF CORS - CROSS DOMAIN RESPONSE SERVICE
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 ///////////////////////////////////
 // Views folder
 //////////////////////////////////
-
+app.use("/static",express.static(path.join(__dirname,"client")));
 app.set("views",path.join(__dirname,"client/app"));
 app.set("view engine","ejs");
 // specify that we want to render .html files using ejs renderfile
