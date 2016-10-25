@@ -1,0 +1,124 @@
+
+modal-view{   
+    ///////////////////
+    //size and position
+    ////////////////////
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height: 100vh;
+    //display
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    //fallout color
+    background-color : white;
+    background-color: rgba(white,0.90);
+
+    //default size
+    font-size:16px;
+
+    .modal-content{
+        background-color:white;
+        //size - display - margins
+        
+        flex-direction: column;
+        width: 30%;
+        
+        
+        //border
+        border:2px solid $gray-dark;
+        border-radius:10px;
+
+        .title{
+            //font size / color
+            color:white;
+            font-size:1.6em;
+            text-align: center;
+
+            //border
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+            border:1px solid $gray-dark;
+
+            //padding
+            padding:0.2em;
+
+            &.danger{
+                background-color:red;
+            }
+            &.success{
+                background-color:$green-main;
+            }
+            &.alert{
+                background-color:orange;
+            }
+        }
+        .body{
+            //body font settings
+            font-size:1.2em;
+            text-align: center;
+
+            //body positioning
+            margin:2em 0.5em;
+            
+        }
+        .footer{
+            //font position and margin
+            text-align: right;
+            margin: 0.5em;
+
+            button{
+                //mouse
+                cursor: pointer;
+
+                //padding
+                padding:0.5em 1em;
+
+                //default button color
+                color:black;
+                background-color:$gray-medium;
+
+                //border styles
+                border-radius: 10px;
+                border: 1px solid $gray-dark;
+
+                //default button on hover
+                &:hover{
+                    background-color: darken($gray-medium,10%);
+                }
+                ///////////////////////////
+                //specific buttons
+                //////////////////////////
+
+                //danger
+                &.danger{
+                    color:white;
+                    background-color:red;
+                    &:hover{
+                        background-color:ligthen(red,0.9);
+                    }
+                }
+                //success
+                &.success{
+                    color:white;
+                    background-color:$green-main;
+                    &:hover{
+                        background-color:lighten($green-main,5%);
+                    }
+                }
+                //alert
+                &.alert{
+                    color:white;
+                    background-color:orange;
+                    &:hover{
+                        background-color:ligthen(orange,0.9);
+                    }
+                }
+            }
+        }
+
+    }
+}

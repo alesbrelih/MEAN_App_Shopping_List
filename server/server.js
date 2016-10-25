@@ -36,7 +36,9 @@ app.use(function(req, res, next) {
 ///////////////////////////////////
 // Views folder
 //////////////////////////////////
+app.use("/public",express.static(path.join(__dirname,"client/dist")));
 app.use("/static",express.static(path.join(__dirname,"client")));
+
 app.set("views",path.join(__dirname,"client/app"));
 app.set("view engine","ejs");
 // specify that we want to render .html files using ejs renderfile

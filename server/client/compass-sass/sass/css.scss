@@ -1,13 +1,32 @@
 /////////////////////////////////////////
 // Import variables
 ////////////////////////////////////////
+@import "_base/_normalize.scss";
+
 @import "_base/_variables.scss";
 
 @import "_base/_animations.scss";
 
+@import "modal-window/_modal-window.scss";
+
 ///////////////////////////////////////
 // default body style - bg,...
 //////////////////////////////////////
+
+modify-items{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+item-list{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
 
 body{
     background-color: $background-body;
@@ -37,10 +56,6 @@ body{
     //border styles
     border-radius: 10px;
     border: 2px solid $gray-dark;
-
-    //if needed for transformations
-    perspective: 1000px;
-
     .main-title {
 
         //main title centered

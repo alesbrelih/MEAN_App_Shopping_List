@@ -4,36 +4,27 @@
 		<th class="table-column-2">Item Quantity</th>
 		<th class="table-column-3"></th>
 	</tr>
-	<tr>
-		<td>Milk</td>
-		<td>3 Packages</td>
-		<td class="table-actions"><i class="fa fa-pencil action-edit" aria-hidden="true"></i><i class="fa fa-times action-remove" aria-hidden="true"></i></td>
+	<tr ng-repeat="item in $ctrl.existingItems">
+		<td>{{item.itemName}}</td>
+		<td>{{item.count}}</td>
+		<td class="table-actions"><i class="fa fa-pencil action-edit" ng-click="$ctrl.EditItem(item)" aria-hidden="true"></i><i class="fa fa-times action-remove" ng-click="$ctrl.RemoveItem(item)" aria-hidden="true"></i></td>
 	</tr>
-	<tr>
-		<td>Oil</td>
-		<td>3 Litres</td>
-		<td class="table-actions"><i class="fa fa-pencil action-edit" aria-hidden="true"></i><i class="fa fa-times action-remove" aria-hidden="true"></i></td>
-	</tr>
-	<tr>
-		<td>Washing Soap</td>
-		<td>3 Bottles</td>
-		<td class="table-actions"><i class="fa fa-pencil action-edit" aria-hidden="true"></i><i class="fa fa-times action-remove" aria-hidden="true"></i></td>
-	</tr>
-
-
 </table>
 
 <h3 id="new-item">Add Item</h3>
-<form class="new-item-form">
+<form class="new-item-form" name="AddItemForm">
 
-	<input class="item-input-name" type="text" name="stuff" placeholder="Item Name - Milk">
-	<input class="item-input-quantity" type="text" name="stuff" placeholder="Item Quantity - 2 packaged">
-	<label class="item-input-submit" id="item-submit"><i class="fa fa-check-circle" aria-hidden="true"></i></label>
-
-
+	<input class="item-input-name" type="text" name="name" placeholder="Item Name - Milk" ng-model="$ctrl.selectedItem.itemName" required/>
+	<input class="item-input-quantity" type="text" name="count" placeholder="Item Quantity - 2 packaged" ng-model="$ctrl.selectedItem.count" required/>
+	<label class="item-input-submit" id="item-submit">
+		<i class="fa fa-pencil-square" ng-class="[{'ng-hide':!$ctrl.EditMode()}, {'disable-submit':AddItemForm.$invalid}]" aria-hidden="true" ng-click="$ctrl.SaveEdit()"></i>
+		<i class="fa fa-check-circle" ng-class="[{'ng-hide':$ctrl.EditMode()}, {'disable-submit':AddItemForm.$invalid}]" aria-hidden="true" ng-click="$ctrl.SaveNew()"></i>
+		<i class="fa fa-times" ng-hide="$ctrl.ClearSelectionNotAvaliable()" aria-hidden="true" ng-click="$ctrl.ClearSelection()"></i>
+	</label>
 </form>
 
 <div class="item-add-btns">
-	<button class="submit-btn">Save</button>
-	<button class="cancel-btn" type="button">Cancel</button>
+	<button class="submit-btn" ng-click="$ctrl.BackToList()">Back</button>
 </div>
+
+<modal-view ng-show="$ctrl.modalDialog.visible" body="$ctrl.modalDialog.body" title="$ctrl.modalDialog.title" btn-text=$ctrl.modalDialog.btnText modal-type="$ctrl.modalDialog.dialogType" hide-dialog="$ctrl.modalDialog.hideDialog()" success="$ctrl.modalDialog.acceptAndClose()"></modal-view>

@@ -1,0 +1,16 @@
+<div class="modal-content">
+	<div class="title" ng-class="$ctrl.modalType">
+        {{$ctrl.title}}
+    </div>
+	<div class="body">
+        {{$ctrl.body}}
+    </div>
+	<div class="footer">
+        <button ng-class="$ctrl.modalType" ng-click="$ctrl.proceed()">
+            {{$ctrl.btnText}}
+        </button>
+        <button ng-click="$ctrl.hide()">
+            Cancel
+        </button>
+    </div>
+</div>

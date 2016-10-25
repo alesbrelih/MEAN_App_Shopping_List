@@ -2,6 +2,7 @@
 // new item heading
 /////////////////////////
 
+
 h3#new-item{
     margin:0px;
     color: $green-main;
@@ -112,12 +113,39 @@ table#new-items-list{
         color:$green-main;
         font-size:2.5em;
         transition:all 150ms ease-in;
-        cursor: pointer;
+        
+        i{
+            transform-origin: center center;
+            cursor: pointer;
+            &.disable-submit{
+            pointer-events: none;
+            color:$gray-medium;
+            cursor: default;
+                // .fa-pencil-square{
+                //     color: $gray-medium;
+                // }
+            }
 
-        &:hover{
-            transform:scale(1.1);
+            &:hover{
+                transform:scale(1.1);
+            }
+            &.fa-pencil-square{
+                color:dodgerblue;
+                &.hide-icon{
+                    display:none;
+                }
+            }
+            &.fa-check-circle{
+                 &.hide-icon{
+                    display:none;
+                }
+            }
         }
     }
+
+        
+        
+    
 
     input[type="text"]{
         border: 2px solid $gray-medium;
@@ -153,6 +181,10 @@ table#new-items-list{
         margin-left: 5px;
         cursor: pointer;
         font-weight: bolder;
+        transition:all 150ms ease-in;
+        &:hover{
+            transform:scale(1.05);
+        }
     }
     //submit btn
     .submit-btn{

@@ -1,18 +1,17 @@
 <div class="item-list">
 	<ul>
-		<li><span class="shop-item">Mleko</span> <label><input type="checkbox"/><span class="shop-confirm"></span></label></li>
-		<li><span class="shop-item">Jajca</span> <label><input type="checkbox"/><span class="shop-confirm"></span></label></li>
-		<li><span class="shop-item">Gobe</span> <label><input type="checkbox"/><span class="shop-confirm"></span></label></li>
-		<li><span class="shop-item">Krompir</span><label><input type="checkbox"/><span class="shop-confirm"></span></label></li>
-		<li><span class="shop-item">Tortelini</span> <label><input type="checkbox"/><span class="shop-confirm"></span></label></li>
+		<li ng-repeat="item in $ctrl.ItemsToBuy"><span class="shop-item">{{item.itemName+" "+ item.count}}</span> <label><input type="checkbox" ng-model="item.checked"/><span class="shop-confirm"></span></label></li>
 	</ul>
 
 	<div class="save-changes">
-		<i class="fa fa-chevron-right fa-4x" aria-hidden="true"></i>
+		<i class="fa fa-chevron-right fa-4x" aria-hidden="true" ng-click="$ctrl.ItemsBought()"></i>
 	</div>
 </div>
 
 
 <div class="item-list-btns">
-	<label class="btn-more-items"> <span>More to Buy</span> </label>
+	<label class="btn-more-items" ng-click="$ctrl.EditItems()"> <span>Edit WishList</span> </label>
 </div>
+
+<modal-view ng-show="$ctrl.modalDialog.visible" body="$ctrl.modalDialog.body" title="$ctrl.modalDialog.title" btn-text=$ctrl.modalDialog.btnText modal-type="$ctrl.modalDialog.dialogType" hide-dialog="$ctrl.modalDialog.hideDialog()" success="$ctrl.modalDialog.acceptAndClose()" >
+</modal-view>
