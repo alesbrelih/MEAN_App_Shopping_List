@@ -31,10 +31,10 @@ router.post("/",function(req,res){
         count : reqItem.count
     });
 
-    newItem.save(function(err, product, numberAff){
+    newItem.save(function(err, product){
         if(err) throw new Error("Error saving item");
-        res.send(product)
-    })
+        res.send(product);
+    });
 });
 
 //get item by id
@@ -58,7 +58,7 @@ router.put("/:item_id",function(req,res){
     };
 
 
-    ShoppingList.findByIdAndUpdate(_id,newItem,function(err,item){
+    ShoppingList.findByIdAndUpdate(_id,newItem,{ new : true },function(err,item){
         if(err) throw new Error("Error updating entry.");
         res.send(item);
     });

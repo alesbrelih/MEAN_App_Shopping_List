@@ -12,7 +12,7 @@
 </table>
 
 <h3 id="new-item">Add Item</h3>
-<form class="new-item-form" name="AddItemForm">
+<form class="new-item-form" name="AddItemForm" validate-strings>
 
 	<input class="item-input-name" type="text" name="name" placeholder="Item Name - Milk" ng-model="$ctrl.selectedItem.itemName" required/>
 	<input class="item-input-quantity" type="text" name="count" placeholder="Item Quantity - 2 packaged" ng-model="$ctrl.selectedItem.count" required/>
@@ -27,4 +27,4 @@
 	<button class="submit-btn" ng-click="$ctrl.BackToList()">Back</button>
 </div>
 
-<modal-view ng-show="$ctrl.modalDialog.visible" body="$ctrl.modalDialog.body" title="$ctrl.modalDialog.title" btn-text=$ctrl.modalDialog.btnText modal-type="$ctrl.modalDialog.dialogType" hide-dialog="$ctrl.modalDialog.hideDialog()" success="$ctrl.modalDialog.acceptAndClose()"></modal-view>
+<modal-view ng-show="$ctrl.modalDialog.visible" body="$ctrl.modalDialog.body" title="$ctrl.modalDialog.title" btn-text=$ctrl.modalDialog.btnText modal-type="$ctrl.modalDialog.dialogType" hide-dialog="$ctrl.modalDialog.hideDialog()" success="$ctrl.modalDialog.acceptAndClose()" cancel-needed="$ctrl.modalDialog.cancelNeeded"></modal-view>

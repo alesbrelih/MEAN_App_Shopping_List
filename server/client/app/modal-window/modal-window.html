@@ -9,7 +9,7 @@
         <button ng-class="$ctrl.modalType" ng-click="$ctrl.proceed()">
             {{$ctrl.btnText}}
         </button>
-        <button ng-click="$ctrl.hide()">
+        <button ng-show="$ctrl.cancelNeeded" ng-click="$ctrl.hide()">
             Cancel
         </button>
     </div>

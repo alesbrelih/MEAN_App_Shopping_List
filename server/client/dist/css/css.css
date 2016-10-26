@@ -864,25 +864,29 @@ body {
 .main-content .main-body .new-item-form .item-input-submit i.fa-check-circle.hide-icon {
   display: none;
 }
-/* line 150, ../../compass-sass/sass/_add-more/_add-more.scss */
+/* line 143, ../../compass-sass/sass/_add-more/_add-more.scss */
+.main-content .main-body .new-item-form .item-input-submit i.fa-times {
+  color: red;
+}
+/* line 153, ../../compass-sass/sass/_add-more/_add-more.scss */
 .main-content .main-body .new-item-form input[type="text"] {
   border: 2px solid #aaaaaa;
   border-radius: 5px;
   padding: 5px;
   margin: 5px 2.5px;
 }
-/* line 156, ../../compass-sass/sass/_add-more/_add-more.scss */
+/* line 159, ../../compass-sass/sass/_add-more/_add-more.scss */
 .main-content .main-body .new-item-form input[type="text"]:focus {
   outline: none;
   border: 2px solid #04AB1D;
 }
-/* line 167, ../../compass-sass/sass/_add-more/_add-more.scss */
+/* line 170, ../../compass-sass/sass/_add-more/_add-more.scss */
 .main-content .main-body .item-add-btns {
   margin: 30px auto;
   width: 90%;
   text-align: center;
 }
-/* line 173, ../../compass-sass/sass/_add-more/_add-more.scss */
+/* line 176, ../../compass-sass/sass/_add-more/_add-more.scss */
 .main-content .main-body .item-add-btns .cancel-btn, .main-content .main-body .item-add-btns .submit-btn {
   background-color: red;
   border-radius: 10px;
@@ -896,11 +900,11 @@ body {
   font-weight: bolder;
   transition: all 150ms ease-in;
 }
-/* line 185, ../../compass-sass/sass/_add-more/_add-more.scss */
+/* line 188, ../../compass-sass/sass/_add-more/_add-more.scss */
 .main-content .main-body .item-add-btns .cancel-btn:hover, .main-content .main-body .item-add-btns .submit-btn:hover {
   transform: scale(1.05);
 }
-/* line 190, ../../compass-sass/sass/_add-more/_add-more.scss */
+/* line 193, ../../compass-sass/sass/_add-more/_add-more.scss */
 .main-content .main-body .item-add-btns .submit-btn {
   margin-right: 5px;
   background-color: #04AB1D;

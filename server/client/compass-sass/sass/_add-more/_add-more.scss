@@ -140,6 +140,9 @@ table#new-items-list{
                     display:none;
                 }
             }
+            &.fa-times{
+                color:red;
+            }
         }
     }
 

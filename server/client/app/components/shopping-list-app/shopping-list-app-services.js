@@ -10,12 +10,24 @@ function ItemService($resource){
 }
 ItemService.$inject = ["$resource"];   
 
-function DialogService(){
+function DialogService($q){
     return {
+        defferedObject : null,
         visible : false,
-        title : "Success",
-        showDialog : function(){ this.visible = true; },
+        // title : "Success",
+        showDialog : function(){ 
+            this.visible = true;
+            if(this.defferedObject)
+            {
+                return this.defferedObject.promise; 
+            }
+        },
         setType : function(type, dialogText){
+            if(type !=="message")
+            {
+                this.defferedObject = $q.defer();
+            }
+            
             if(type === "delete")
             {
                 this.dialogType = "danger";
@@ -48,6 +60,14 @@ function DialogService(){
                 this.body = dialogText;
                 this.btnText = "Create";
             }
+            else if(type === "buy")
+            {
+                this.dialogType = "alert";
+                this.title = "Alert";
+                this.cancelNeeded = true;
+                this.body = dialogText;
+                this.btnText = "Proceed";
+            }
             else if(type === "update")
             {
                 this.dialogType = "alert";
@@ -57,25 +77,37 @@ function DialogService(){
                 this.btnText = "Update";
             }
         },
-        setCallback: function(fun){
-            this.callback = fun;
-        },
-        hideDialog: function(){ this.visible = false; },
-        dialogType : "success",
-        cancelNeeded : true,
-        btnText : "Continue",
-        body : "",
-        acceptAndClose: function(){
-            if(this.callback){
-                this.callback();
+        // setCallback: function(fun){
+        //     this.callback = fun;
+        // },
+        hideDialog: function(){ 
+            this.visible = false;
+            if(this.defferedObject)
+            {
+                this.defferedObject.reject("return");
+                this.defferedObject = null;
             }
-            this.hideDialog();
+            
+        },
+        // dialogType : "success",
+        // cancelNeeded : true,
+        // btnText : "Continue",
+        // body : "",
+        acceptAndClose: function(){
+            this.visible = false;
+            if(this.defferedObject)
+            {
+                this.defferedObject.resolve("return");
+                this.defferedObject = null;
+            }
+            
         }
 
         
     };
 
 }
+DialogService.$inject=["$q"];
 
 angular.module("shoppingList.services",["ngResource"]).factory("ItemsService",ItemService);
 angular.module("shoppingList.dialogService",[]).factory("DialogService",DialogService);

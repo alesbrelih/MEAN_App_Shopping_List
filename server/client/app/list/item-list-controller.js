@@ -20,11 +20,12 @@ function ListController(DialogService,ItemsService,$state)
         $state.go("add");
     };
 
-    //items which were checked were bought, so it calls remove item from db factory
-    //also passes the itemlist reference to factory so when it is deleted successfully
-    //its also removed from the list
+    ////////////////////////////////////////////////////////////////////////////
+    //  callback function for when dialog has recieved OK status from modal
+    //  items which were checked were bought, so it calls remove item from db factory
+    //  also passes the itemlist reference to factory so when it is deleted successfully
+    //  its also removed from the list
 
-    //callback function for when dialog has recieved OK status
     function buyItems(){
         ctrl.ItemsToBuy.forEach(function(item){
 
@@ -41,14 +42,22 @@ function ListController(DialogService,ItemsService,$state)
         });
     }
 
+    //callback function for when no error removing items from db
+
+    //TODO: create error callback function when error removing items from db
+    
+    function successfulBuy(){
+        ctrl.modalDialog.setType("message","Selected item/s were successufuly bought.");
+        ctrl.modalDialog.showDialog();
+    }
+
     // action when we buy items -> click on anchor right
     ctrl.ItemsBought = function(){
         //set dialog to be opened
-        ctrl.modalDialog.setType("message","hi");
-        //set dialog callback function if success
-        ctrl.modalDialog.setCallback(buyItems);
+        ctrl.modalDialog.setType("buy","Selected item/s will be removed from the list.");
+
         //show dialog
-        ctrl.modalDialog.showDialog();
+        ctrl.modalDialog.showDialog().then(buyItems).then(successfulBuy);
     
     };
 
@@ -59,7 +68,7 @@ var app = angular.module("shoppingListApp");
 //component name, since angular uses lowerCamelCase naming, component name will be item-list
 app.component("itemList",{
     //partial html for template
-    templateUrl: 'static/app/list/item-list.html',
+    templateUrl: "static/app/list/item-list.html",
 
     //controller and dependencies for controller
     controller: ["DialogService","ItemsService","$state",ListController]

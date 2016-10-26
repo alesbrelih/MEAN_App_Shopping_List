@@ -2,4 +2,4 @@
 // Main angular app
 ///////////////////////////////////////////////////
 
-angular.module("shoppingListApp",["shoppingList.services","shoppingList.dialogService","ui.router"]);
+angular.module("shoppingListApp",["shoppingList.services","shoppingList.dialogService","ui.router","shoppingListApp.validators"]);

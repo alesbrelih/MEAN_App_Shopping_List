@@ -33,7 +33,8 @@ angular.module("shoppingListApp").component("modalView",
             btnText:"<",
             body:"<",
             hideDialog:"&",
-            success:"&"
+            success:"&",
+            cancelNeeded:"<"
               
         }
     }
