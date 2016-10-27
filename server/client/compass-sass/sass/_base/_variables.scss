@@ -9,10 +9,16 @@
 
 //color variables
 $green-main : #04AB1D;
+
 $gray-dark : #777;
 $gray-medium : lighten($gray-dark,20%);
 $gray-light : #eee;
+
 $background-body: #232323;
+
+$red-standard:red;
+$red-darker: darken($color: $red-standard, $amount: 10%);
+$red-darkest: darken($color: $red-standard, $amount: 30%);
 
 //font family variables
 $default-font: 'Asap', sans-serif;

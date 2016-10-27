@@ -12,16 +12,24 @@
 </table>
 
 <h3 id="new-item">Add Item</h3>
-<form class="new-item-form" name="AddItemForm" validate-strings>
+<form class="new-item-form" name="AddItemForm" novalidate>
 
-	<input class="item-input-name" type="text" name="name" placeholder="Item Name - Milk" ng-model="$ctrl.selectedItem.itemName" required/>
-	<input class="item-input-quantity" type="text" name="count" placeholder="Item Quantity - 2 packaged" ng-model="$ctrl.selectedItem.count" required/>
+	<input validate-string class="item-input-name" type="text" name="name" placeholder="Item Name - Milk" ng-model="$ctrl.selectedItem.itemName" required/>
+	<input validate-number class="item-input-quantity" type="text" name="count" placeholder="Item Quantity - 2 packaged" ng-model="$ctrl.selectedItem.count" required/>
 	<label class="item-input-submit" id="item-submit">
 		<i class="fa fa-pencil-square" ng-class="[{'ng-hide':!$ctrl.EditMode()}, {'disable-submit':AddItemForm.$invalid}]" aria-hidden="true" ng-click="$ctrl.SaveEdit()"></i>
 		<i class="fa fa-check-circle" ng-class="[{'ng-hide':$ctrl.EditMode()}, {'disable-submit':AddItemForm.$invalid}]" aria-hidden="true" ng-click="$ctrl.SaveNew()"></i>
 		<i class="fa fa-times" ng-hide="$ctrl.ClearSelectionNotAvaliable()" aria-hidden="true" ng-click="$ctrl.ClearSelection()"></i>
 	</label>
+	
+</div>
 </form>
+
+<div class="form-errors">
+	<!--error messages custom component-->
+	<ng-error-message error-text="Item name is invalid." ng-show="AddItemForm.name.$error.validateString"></ng-error-message>
+
+	<ng-error-message error-text="Item count is invalid." ng-show="AddItemForm.count.$error.validateNumber"></ng-error-message>
 
 <div class="item-add-btns">
 	<button class="submit-btn" ng-click="$ctrl.BackToList()">Back</button>

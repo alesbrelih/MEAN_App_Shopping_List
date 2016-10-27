@@ -10,10 +10,15 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
     $urlRouterProvider.otherwise("/");
  
     $stateProvider
-    //module state... abstract...
+        //modal window... abstract...
         .state("items",{
             template : "<modal-view></modal-view>",
             abstract: true
+        })
+        //error alert box
+        .state("errorAlert",{
+            template : "<ng-error-message></ng-error-message>",
+            abstract:true
         })
         .state("home", {
             url:"/",

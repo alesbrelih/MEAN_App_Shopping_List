@@ -909,6 +909,43 @@ body {
   margin-right: 5px;
   background-color: #04AB1D;
 }
+/* line 201, ../../compass-sass/sass/_add-more/_add-more.scss */
+.main-content .main-body .form-errors {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 209, ../../compass-sass/sass/_add-more/_add-more.scss */
+.main-content .main-body .form-errors ng-error-message .shop-item-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+  font-size: 1.2em;
+  background-color: red;
+  background-color: rgba(255, 0, 0, 0.7);
+  text-align: center;
+  border-radius: 15px;
+  border: 2px solid #cc0000;
+}
+/* line 240, ../../compass-sass/sass/_add-more/_add-more.scss */
+.main-content .main-body .form-errors ng-error-message i {
+  flex-grow: 2;
+  font-size: 2.5em;
+  color: #660000;
+  padding-right: 0.5em;
+}
+/* line 250, ../../compass-sass/sass/_add-more/_add-more.scss */
+.main-content .main-body .form-errors ng-error-message span {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  flex-grow: 8;
+  font-weight: bold;
+  color: #660000;
+}
 
 @media screen and (max-width: 900px) {
   /* line 4, ../../compass-sass/sass/_base/_media.scss */
