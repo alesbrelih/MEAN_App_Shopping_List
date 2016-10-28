@@ -27,7 +27,19 @@ app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $ur
         .state("add", {
             url:"/add",
             template: "<modify-items></modify-items>"
+        })
+        .state("auth",{
+            url:"/auth",
+            template: "<user-auth></user-auth>"
+        })
+        .state("auth.register",{
+            url:"/register",
+            template:"<user-register></user-register>"
+        })
+        .state("auth.login",{
+            url:"/login",
+            template: "<user-login></user-login>"
         });
-        
+    
  
 }]);

@@ -8,17 +8,27 @@
 @import url('https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css');
 
 //color variables
+//green
 $green-main : #04AB1D;
+$green-dark : darken($green-main,10%);
 
+//blue
+$blue-main : dodgerblue;
+$blue-darker : darken($blue-main,10%);
+
+//gray
 $gray-dark : #777;
 $gray-medium : lighten($gray-dark,20%);
 $gray-light : #eee;
+$gray-super-light: lighten($gray-light,5%);
 
-$background-body: #232323;
-
+//red
 $red-standard:red;
 $red-darker: darken($color: $red-standard, $amount: 10%);
 $red-darkest: darken($color: $red-standard, $amount: 30%);
+
+//main bg color
+$background-body: #232323;
 
 //font family variables
 $default-font: 'Asap', sans-serif;

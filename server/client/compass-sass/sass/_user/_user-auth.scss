@@ -1,0 +1,253 @@
+////////////////////////////////////
+// ----- Auth state complete background ----------
+////////////////////////////////////
+.auth-user-window{
+    //positin
+    position:fixed;
+
+    //size and location
+    top:0;
+    left:0;
+    width:100vw;
+    height: 100vh;
+
+    //background color
+    background-color: white;
+
+    //centering content - main window
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    //animate
+    [ui-view]{
+        &.ng-enter{
+            transition: all 500ms ease-in;
+            opacity: 0;
+            transform:translateY(-100%);
+        }
+        &.ng-enter.ng-enter-active{
+            opacity:1;
+            transform: translateY(0);
+        }
+    }
+
+    ////////////////////////////////////
+    // ----- Main Window ----------
+    ////////////////////////////////////
+    .auth-user-content{
+
+        //window min size
+        min-width: 350px;
+        min-height: 300px;
+
+        //border radius and color
+        border-radius: 10px;
+        border:2px solid $gray-dark;
+
+        //bg color
+        background-color:$gray-super-light;
+
+        ////////////////////////////////////
+        // ----- Register User Form ----------
+        ////////////////////////////////////
+        .register-user{
+
+            //align center
+            text-align: center;
+
+            //h2 custom style
+            h2{
+                color:$green-main;
+                font-size:1.6em;
+            }
+
+            //form styles
+            form{
+
+                //centring form in center
+                margin-left:auto;
+                margin-right:auto;
+
+                //form content expand full form width
+                width:100%;
+
+                //centering inside form
+                display:flex;
+                justify-content: center;
+                align-items: center;
+
+                //flex direction column
+                flex-direction: column;
+
+                //a styles <- back to login anchor
+                a{
+                    //position/width
+                    padding-left:10%;
+                    padding-top:5px;
+                    width:50%;
+                    align-self: flex-start;
+                    
+                    //font style
+                    color:$green-main;
+                    text-align: left;
+                }
+
+                //input, buttons styles
+                input,button{
+
+                    box-sizing: border-box;
+                    width: 80%;
+                    border: 2px solid $gray-medium;
+                    border-radius : 10px;
+                    
+                    padding:5px 20px;
+                    margin:5px 2.5px;
+                }
+
+                input{
+
+                    //no outline
+                    outline: none;
+
+                    &:focus{ 
+                        //custom outline
+                        border-color:$green-main;
+                    }
+                }
+
+                //button extra uncommon to input styles
+                button{
+
+                    //margins
+                    margin-top:30px;
+                    margin-bottom:20px;
+
+                    //extra padding for button size
+                    padding-top:10px;
+                    padding-bottom:10px;
+
+                    //bg and font color
+                    background-color:$green-main;
+                    color:white;
+
+                    //border color
+                    border:2px solid $green-dark;
+
+                    //transition on scaling 
+                    transition:all 150ms ease-in;
+
+                    &:hover{
+                        //bigger scale on hover
+                        transform:scale(1.02);
+                    }
+                }
+
+            }
+
+            
+        }
+
+        ////////////////////////////////////
+        // ----- Login User Form ----------
+        ////////////////////////////////////
+        .login-user{
+
+            //align center
+             text-align: center;
+
+             //h2 custom style
+            h2{
+                color:$green-main;
+                font-size:1.6em;
+            }
+
+            //form styles
+            form{
+
+                //centering -webkit-transform: 
+                margin-left:auto;
+                margin-right:auto;
+
+                //form content expand full form
+                width:100%;
+
+                //centering inside form
+                display:flex;
+                justify-content: center;
+                align-items: center;
+
+                //flex direction column
+                flex-direction: column;
+
+                //input, buttons styles    
+                input,button{
+
+                    box-sizing: border-box;
+                    width: 80%;
+                    border: 2px solid $gray-medium;
+                    border-radius : 10px;
+                    
+                    
+                    padding:5px 20px;
+                    margin:5px 2.5px;
+                }
+
+                input{
+
+                    //no outline
+                    outline: none;
+
+                    &:focus{
+
+                        //custom outline
+                        border-color:$green-main;
+                    }
+                }
+
+                //button extra for first button (Login) uncommon to input styles
+                button{
+                    
+                    //margins 
+                    margin-top:30px;
+
+                    //extra padding for button size
+                    padding-top:10px;
+                    padding-bottom:10px;
+
+                    //bg and font color
+                    background-color:$green-main;
+                    color:white;
+
+                    //border color
+                    border:2px solid $green-dark;
+                    
+                    //transition on scaling 
+                    transition:all 150ms ease-in;
+
+                    &:hover{
+                        //bigger scale on hover
+                        transform:scale(1.02);
+                    }
+
+
+                    //login button custom styles
+                    &.login-submit-register{
+
+                        //bg and border color
+                        background-color:$blue-main;
+                        border-color: $blue-darker;
+
+                        //margins
+                        margin-top:2.5px;
+                        margin-bottom:20px;
+                    }
+                }
+
+            }
+
+            
+        }
+
+    }
+}

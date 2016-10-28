@@ -988,6 +988,154 @@ body {
   font-weight: bold;
   color: #660000;
 }
+/* line 4, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* line 24, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window [ui-view].ng-enter {
+  transition: all 500ms ease-in;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+/* line 29, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window [ui-view].ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* line 38, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content {
+  min-width: 350px;
+  min-height: 300px;
+  border-radius: 10px;
+  border: 2px solid #777;
+  background-color: #fbfbfb;
+}
+/* line 54, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .register-user {
+  text-align: center;
+}
+/* line 60, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .register-user h2 {
+  color: #04AB1D;
+  font-size: 1.6em;
+}
+/* line 66, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .register-user form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* line 84, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .register-user form a {
+  padding-left: 10%;
+  padding-top: 5px;
+  width: 50%;
+  align-self: flex-start;
+  color: #04AB1D;
+  text-align: left;
+}
+/* line 97, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .register-user form input, .main-content .main-body .auth-user-window .auth-user-content .register-user form button {
+  box-sizing: border-box;
+  width: 80%;
+  border: 2px solid #aaaaaa;
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin: 5px 2.5px;
+}
+/* line 108, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .register-user form input {
+  outline: none;
+}
+/* line 113, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .register-user form input:focus {
+  border-color: #04AB1D;
+}
+/* line 120, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .register-user form button {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #04AB1D;
+  color: white;
+  border: 2px solid #037915;
+  transition: all 150ms ease-in;
+}
+/* line 140, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .register-user form button:hover {
+  transform: scale(1.02);
+}
+/* line 154, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .login-user {
+  text-align: center;
+}
+/* line 160, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .login-user h2 {
+  color: #04AB1D;
+  font-size: 1.6em;
+}
+/* line 166, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .login-user form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* line 184, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .login-user form input, .main-content .main-body .auth-user-window .auth-user-content .login-user form button {
+  box-sizing: border-box;
+  width: 80%;
+  border: 2px solid #aaaaaa;
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin: 5px 2.5px;
+}
+/* line 196, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .login-user form input {
+  outline: none;
+}
+/* line 201, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .login-user form input:focus {
+  border-color: #04AB1D;
+}
+/* line 209, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .login-user form button {
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #04AB1D;
+  color: white;
+  border: 2px solid #037915;
+  transition: all 150ms ease-in;
+}
+/* line 228, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .login-user form button:hover {
+  transform: scale(1.02);
+}
+/* line 235, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content .login-user form button.login-submit-register {
+  background-color: dodgerblue;
+  border-color: #0077ea;
+  margin-top: 2.5px;
+  margin-bottom: 20px;
+}
 
 @media screen and (max-width: 900px) {
   /* line 4, ../../compass-sass/sass/_base/_media.scss */
