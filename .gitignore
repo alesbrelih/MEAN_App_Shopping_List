@@ -1,3 +1,4 @@
 server/node_modules
 server/typings
 server/client/bower_components
+server/client/compass-sass/.sass-cache
