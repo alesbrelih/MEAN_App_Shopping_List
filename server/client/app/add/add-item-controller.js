@@ -183,9 +183,7 @@ function AddController(DialogService,ItemsService,$state){
     };
 
     ctrl.BackToList = function(){
-        // $state.go("home");
-        console.log(ctrl.selectedItem);
-        console.log(ctrl.ClearSelectionNotAvaliable());
+        $state.go("home");
     };
 }
 

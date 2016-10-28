@@ -1,5 +1,5 @@
 <table id="new-items-list">
-	<tr>
+	<tr class="table-headers">
 		<th class="table-column-1">Item Name</th>
 		<th class="table-column-2">Item Quantity</th>
 		<th class="table-column-3"></th>
@@ -9,6 +9,10 @@
 		<td>{{item.count}}</td>
 		<td class="table-actions"><i class="fa fa-pencil action-edit" ng-click="$ctrl.EditItem(item)" aria-hidden="true"></i><i class="fa fa-times action-remove" ng-click="$ctrl.RemoveItem(item)" aria-hidden="true"></i></td>
 	</tr>
+	<!--bottom border hack-->
+	<tr class="bottom-border"><td></td>
+	<td></td>
+	<td></td></tr>
 </table>
 
 <h3 id="new-item">Add Item</h3>
