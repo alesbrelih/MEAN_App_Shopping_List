@@ -557,7 +557,7 @@ modal-view .modal-content .footer button.alert:hover {
   background-color: ligthen(orange, 0.9);
 }
 
-/* line 16, ../../compass-sass/sass/css.scss */
+/* line 18, ../../compass-sass/sass/css.scss */
 modify-items {
   display: flex;
   justify-content: center;
@@ -566,7 +566,7 @@ modify-items {
   flex-direction: column;
 }
 
-/* line 23, ../../compass-sass/sass/css.scss */
+/* line 25, ../../compass-sass/sass/css.scss */
 item-list {
   display: flex;
   justify-content: center;
@@ -575,7 +575,7 @@ item-list {
   flex-direction: column;
 }
 
-/* line 31, ../../compass-sass/sass/css.scss */
+/* line 33, ../../compass-sass/sass/css.scss */
 body {
   background-color: #232323;
   display: flex;
@@ -588,7 +588,7 @@ body {
   font-size: 16px;
 }
 
-/* line 45, ../../compass-sass/sass/css.scss */
+/* line 47, ../../compass-sass/sass/css.scss */
 .main-content {
   background-color: #eee;
   width: 960px;
@@ -598,22 +598,22 @@ body {
   border-radius: 10px;
   border: 2px solid #777;
 }
-/* line 59, ../../compass-sass/sass/css.scss */
+/* line 61, ../../compass-sass/sass/css.scss */
 .main-content .main-title {
   text-align: center;
 }
-/* line 64, ../../compass-sass/sass/css.scss */
+/* line 66, ../../compass-sass/sass/css.scss */
 .main-content .main-title h1 {
   color: #04AB1D;
   font-size: 3em;
   position: relative;
 }
-/* line 69, ../../compass-sass/sass/css.scss */
+/* line 71, ../../compass-sass/sass/css.scss */
 .main-content .main-title h1 span {
   background-color: #eee;
   padding: 20px;
 }
-/* line 76, ../../compass-sass/sass/css.scss */
+/* line 78, ../../compass-sass/sass/css.scss */
 .main-content .main-title h1:before {
   content: "";
   margin: 0 auto;
@@ -625,7 +625,7 @@ body {
   border-top: 3px solid #aaaaaa;
   z-index: -1;
 }
-/* line 91, ../../compass-sass/sass/css.scss */
+/* line 93, ../../compass-sass/sass/css.scss */
 .main-content .main-body {
   padding: 10px 50px;
   display: flex;
@@ -1019,16 +1019,52 @@ body {
   border: 2px solid #777;
   background-color: #fbfbfb;
 }
+/* line 3, ../../compass-sass/sass/error-message/_error-message.scss */
+.main-content .main-body .auth-user-window .auth-user-content ng-error-message .shop-item-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+  font-size: 1.2em;
+  background-color: red;
+  background-color: rgba(255, 0, 0, 0.7);
+  text-align: center;
+  border-radius: 15px;
+  border: 2px solid #cc0000;
+}
+/* line 34, ../../compass-sass/sass/error-message/_error-message.scss */
+.main-content .main-body .auth-user-window .auth-user-content ng-error-message i {
+  flex-grow: 2;
+  font-size: 2.5em;
+  color: #660000;
+  padding-right: 0.5em;
+}
+/* line 44, ../../compass-sass/sass/error-message/_error-message.scss */
+.main-content .main-body .auth-user-window .auth-user-content ng-error-message span {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  flex-grow: 8;
+  font-weight: bold;
+  color: #660000;
+}
 /* line 54, ../../compass-sass/sass/_user/_user-auth.scss */
+.main-content .main-body .auth-user-window .auth-user-content ng-error-message {
+  width: 80%;
+  font-size: 0.7em;
+}
+/* line 62, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .register-user {
   text-align: center;
 }
-/* line 60, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 68, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .register-user h2 {
   color: #04AB1D;
   font-size: 1.6em;
 }
-/* line 66, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 74, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .register-user form {
   margin-left: auto;
   margin-right: auto;
@@ -1038,7 +1074,7 @@ body {
   align-items: center;
   flex-direction: column;
 }
-/* line 84, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 92, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .register-user form a {
   padding-left: 10%;
   padding-top: 5px;
@@ -1047,7 +1083,7 @@ body {
   color: #04AB1D;
   text-align: left;
 }
-/* line 97, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 105, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .register-user form input, .main-content .main-body .auth-user-window .auth-user-content .register-user form button {
   box-sizing: border-box;
   width: 80%;
@@ -1056,15 +1092,15 @@ body {
   padding: 5px 20px;
   margin: 5px 2.5px;
 }
-/* line 108, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 116, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .register-user form input {
   outline: none;
 }
-/* line 113, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 121, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .register-user form input:focus {
   border-color: #04AB1D;
 }
-/* line 120, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 128, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .register-user form button {
   margin-top: 30px;
   margin-bottom: 20px;
@@ -1075,20 +1111,20 @@ body {
   border: 2px solid #037915;
   transition: all 150ms ease-in;
 }
-/* line 140, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 148, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .register-user form button:hover {
   transform: scale(1.02);
 }
-/* line 154, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 162, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .login-user {
   text-align: center;
 }
-/* line 160, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 168, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .login-user h2 {
   color: #04AB1D;
   font-size: 1.6em;
 }
-/* line 166, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 174, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .login-user form {
   margin-left: auto;
   margin-right: auto;
@@ -1098,7 +1134,7 @@ body {
   align-items: center;
   flex-direction: column;
 }
-/* line 184, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 192, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .login-user form input, .main-content .main-body .auth-user-window .auth-user-content .login-user form button {
   box-sizing: border-box;
   width: 80%;
@@ -1107,15 +1143,15 @@ body {
   padding: 5px 20px;
   margin: 5px 2.5px;
 }
-/* line 196, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 204, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .login-user form input {
   outline: none;
 }
-/* line 201, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 209, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .login-user form input:focus {
   border-color: #04AB1D;
 }
-/* line 209, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 217, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .login-user form button {
   margin-top: 30px;
   padding-top: 10px;
@@ -1125,11 +1161,11 @@ body {
   border: 2px solid #037915;
   transition: all 150ms ease-in;
 }
-/* line 228, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 236, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .login-user form button:hover {
   transform: scale(1.02);
 }
-/* line 235, ../../compass-sass/sass/_user/_user-auth.scss */
+/* line 243, ../../compass-sass/sass/_user/_user-auth.scss */
 .main-content .main-body .auth-user-window .auth-user-content .login-user form button.login-submit-register {
   background-color: dodgerblue;
   border-color: #0077ea;

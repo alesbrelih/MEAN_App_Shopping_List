@@ -1,7 +1,12 @@
-////////////////////////////////////////////////////
-// Main angular app
-///////////////////////////////////////////////////
+(function(angular){
+    ////////////////////////////////////////////////////
+    // Main angular app
+    ///////////////////////////////////////////////////
 
-angular.module("shoppingListApp",["shoppingList.services","shoppingList.dialogService","ui.router","shoppingListApp.validators","ngAnimate"]);
+    var dependencies = ["shoppingList.services","shoppingList.dialogService","ui.router","shoppingListApp.validators","ngAnimate"];
+
+    angular.module("shoppingListApp", dependencies);
 
 //TODO: add toasts for messages/warnings instead of modal
+})(window.angular);
+

@@ -48,6 +48,14 @@
         //bg color
         background-color:$gray-super-light;
 
+
+        @import "../error-message/_error-message.scss";
+
+        ng-error-message{
+            width:80%;
+            font-size:0.7em;
+        }
+
         ////////////////////////////////////
         // ----- Register User Form ----------
         ////////////////////////////////////

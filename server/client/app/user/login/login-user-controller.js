@@ -1,5 +1,9 @@
-var app = angular.module("shoppingListApp");
+(function(angular){
+    
+    var app = angular.module("shoppingListApp");
 
-app.component("userLogin",{
-    templateUrl: "static/app/user/login/login-user.html"
-});
+    app.component("userLogin",{
+        templateUrl: "static/app/user/login/login-user.html"
+    });
+
+})(window.angular);

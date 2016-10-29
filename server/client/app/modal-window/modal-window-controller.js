@@ -1,41 +1,46 @@
-/////////////////////////////////
-// Modal window controller/component
-/////////////////////////////////
+(function(angular){
 
-function ModalController()
-{
+    /////////////////////////////////
+    // Modal window controller/component
+    /////////////////////////////////
 
-    var ctrl = this;
-
-    //click on cancel button
-    ctrl.hide = function()
+    function ModalController()
     {
-        //callback
-        ctrl.hideDialog();
-    };
 
-    //click on submit button
-    ctrl.proceed = function(){
-        //callback
-        ctrl.success();
-    };
-    
-}
+        var ctrl = this;
 
-angular.module("shoppingListApp").component("modalView",
-    {
-        templateUrl:"static/app/modal-window/modal-window.html",
-        controller : ModalController,
-        bindings:{
-            // < one way binding for values, @ one way binding for string, & dual way bind for functions
-            title: "<",
-            modalType:"<",
-            btnText:"<",
-            body:"<",
-            hideDialog:"&",
-            success:"&",
-            cancelNeeded:"<"
-              
-        }
+        //click on cancel button
+        ctrl.hide = function()
+        {
+            //callback
+            ctrl.hideDialog();
+        };
+
+        //click on submit button
+        ctrl.proceed = function(){
+            //callback
+            ctrl.success();
+        };
+        
     }
-);
+
+    angular.module("shoppingListApp").component("modalView",
+        {
+            templateUrl:"static/app/modal-window/modal-window.html",
+            controller : ModalController,
+            bindings:{
+                // < one way binding for values, @ one way binding for string, & dual way bind for functions
+                title: "<",
+                modalType:"<",
+                btnText:"<",
+                body:"<",
+                hideDialog:"&",
+                success:"&",
+                cancelNeeded:"<"
+                
+            }
+        }
+    );
+
+})(window.angular);
+

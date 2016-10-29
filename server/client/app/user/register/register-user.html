@@ -1,11 +1,15 @@
 <div class="auth-user-content">
     <div class="register-user">
         <h2>Register</h2>
-        <form>
+        <form name="registerForm" novalidate>
 
-            <input type="text" name="email" placeholder="Enter e-mail..">
-            <input type="password" name="password" placeholder="Enter password.." >
-            <input type="password" name="password-confirm" placeholder="Confirm password..">
+            <input type="email" name="email" placeholder="Enter e-mail.." ng-model="$ctrl.user.email" >
+            <input type="password" name="password" placeholder="Enter password.." ng-model="$ctrl.user.password" >
+            <input type="password" name="passwordConfirm" placeholder="Confirm password.." ng-model="$ctrl.passwordMatch" ab-pwd-match="$ctrl.user.password">
+            
+            <ng-error-message ng-show="registerForm.email.$touched && registerForm.email.$invalid" error-text="Invalid email address."></ng-error-message>
+            <ng-error-message ng-show="registerForm.passwordConfirm.$touched && registerForm.passwordConfirm.$error.passwordMatch" error-text="Passwords do not match."></ng-error-message>
+            
             <a href="" ui-sref="auth.login">Back to Login</a>
             <button class="submit-register">
                 Confirm

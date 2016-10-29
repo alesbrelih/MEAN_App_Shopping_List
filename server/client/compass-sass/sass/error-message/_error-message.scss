@@ -1,0 +1,58 @@
+ng-error-message{
+//same css rules for both errors
+.shop-item-error{
+    
+
+    //flex and centered
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    //padding left and right
+    padding-left:2em;
+    padding-right: 2em;
+
+    //margin top
+    margin-top:2.5px;
+    margin-bottom:2.5px;
+
+    //default font-size
+    font-size:1.2em;
+
+    //bg - color
+    background-color:red; //fallback color
+    background-color:rgba(red,0.7);
+
+    //text align
+    text-align: center;
+
+    //border
+    border-radius: 15px;
+    border:2px solid $red-darker;
+}
+
+i{ //exclamation styling
+    
+    //box width
+    flex-grow: 2;
+
+    //font size and color
+    font-size:2.5em;
+    color:$red-darkest;
+    padding-right:0.5em;
+    }
+    span{
+        //error text styling
+
+        //pading
+        padding-top:1.5em;
+        padding-bottom:1.5em;
+
+        //width
+        flex-grow: 8;
+        
+        //font styling
+        font-weight: bold;
+        color:$red-darkest;
+    }
+}
