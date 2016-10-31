@@ -7,6 +7,11 @@
     //reference to main module
     var app = angular.module("shoppingListApp");
 
+
+
+
+    
+
     //routing
     app.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
@@ -42,9 +47,43 @@
                 url:"/login",
                 template: "<user-login></user-login>"
             });
+
+
+        
         
     
     }]);
+
+    app.config(["$httpProvider",function($httpProvider){
+
+
+        $httpProvider.interceptors.push("HttpIntercept");
+
+    }]);
+
+    // check if user is logged in when changing route
+    // user doesnt have jwt token
+    app.run(CheckIfLoggedIn);
+
+    //check if user is logged in
+    function CheckIfLoggedIn($state,JwtService,$rootScope){
+        $rootScope.$on("$stateChangeStart",function(event, toState, toParams, fromState, fromParams, options){ 
+
+            //check if state doesnt start with auth and there is no jwt token present
+            if(!toState.name.startsWith("auth") && !JwtService.IsLoggedIn())
+            {
+                event.preventDefault(); //prevent change to happen
+                $state.go("auth.login");
+            }
+
+        });
+        
+    }
+
+    //inject needed services
+    CheckIfLoggedIn.$inject = ["$state","JwtService","$rootScope"];
+
+    
 })(window.angular);
 
 

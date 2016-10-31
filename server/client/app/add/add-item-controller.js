@@ -28,7 +28,13 @@
 
 
         //query all items from db
-        ctrl.existingItems = ItemsService.query();
+        ctrl.existingItems = ItemsService.query(function(err)
+        {
+        console.log("sssasasa");
+        },function(err2){
+            console.log(err2);
+        }
+        );
 
         
 

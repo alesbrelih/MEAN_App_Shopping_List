@@ -6,10 +6,14 @@
 
     //controller function
 
-    function ListController(DialogService,ItemsService,$state)
+    function ListController(DialogService,ItemsService,$state,AuthService)
     {
         //controller reference, good for async so this value isn't moved in future references
         var ctrl = this;
+
+        ctrl.logout = function(){
+            AuthService.LogoutUser();
+        };
 
         ctrl.modalDialog = DialogService;
 
@@ -73,7 +77,7 @@
         templateUrl: "static/app/list/item-list.html",
 
         //controller and dependencies for controller
-        controller: ["DialogService","ItemsService","$state",ListController]
+        controller: ["DialogService","ItemsService","$state","AuthService",ListController]
     });
 
 })(window.angular);

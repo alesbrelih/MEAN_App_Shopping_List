@@ -61,16 +61,17 @@ UserSchema.methods.checkPassword = function(password,cb){
 //method to generate jwt token
 
 UserSchema.methods.generateJwt = function(){
-    //expiration date in seconds to pass
-    var expirationDate = new Date();
-    expirationDate.setDate(expirationDate.getDay()+7);
-    var expirationDateInSecondsPassed = parseInt(expirationDate/1000);
-
     //returns jwt
-    return jwt.sign({
-        _id: this._id, //id
-        expiresIn: expirationDateInSecondsPassed}, //expire in s
-        config.secret //secret
+    return jwt.sign(
+        {
+            //payload
+            _id: this._id
+        }, //secret
+        config.secret,
+        {
+            //options
+            expiresIn: "14d"
+        } 
         );
 };
 

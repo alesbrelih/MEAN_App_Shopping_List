@@ -13,5 +13,7 @@
 	<label class="btn-more-items" ng-click="$ctrl.EditItems()"> <span>Edit WishList</span> </label>
 </div>
 
+<button type="button" ng-click="$ctrl.logout()"> log out</button>
+
 <modal-view id="modal-box" ng-show="$ctrl.modalDialog.visible" body="$ctrl.modalDialog.body" title="$ctrl.modalDialog.title" btn-text=$ctrl.modalDialog.btnText modal-type="$ctrl.modalDialog.dialogType" hide-dialog="$ctrl.modalDialog.hideDialog()" success="$ctrl.modalDialog.acceptAndClose()" cancel-needed="$ctrl.modalDialog.cancelNeeded" >
 </modal-view>

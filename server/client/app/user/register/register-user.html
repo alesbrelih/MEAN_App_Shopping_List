@@ -11,7 +11,7 @@
             <ng-error-message ng-show="registerForm.passwordConfirm.$touched && registerForm.passwordConfirm.$error.passwordMatch" error-text="Passwords do not match."></ng-error-message>
             
             <a href="" ui-sref="auth.login">Back to Login</a>
-            <button class="submit-register">
+            <button class="submit-register" ng-click="$ctrl.register()">
                 Confirm
             </button>
 

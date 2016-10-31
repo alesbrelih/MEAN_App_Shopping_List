@@ -1,6 +1,6 @@
 (function(angular){
 
-    function UserRegisterController(){
+    function UserRegisterController(AuthService){
 
         var ctrl = this;
         
@@ -9,8 +9,13 @@
             password:""
         };
 
+        ctrl.register = function(){
+            AuthService.RegisterUser(ctrl.user);
+        };
+
     }
 
+    UserRegisterController.$inject = ["AuthService"];
     var app = angular.module("shoppingListApp");
 
     app.component("userRegister",{

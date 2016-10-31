@@ -4,10 +4,10 @@
             <h2>Login</h2>
             <form>
                 
-                <input type="email" name="email" placeholder="E-mail">
-                <input type="password" name="password" placeholder="Password"/>
+                <input type="email" name="email" placeholder="E-mail" ng-model="$ctrl.user.email">
+                <input type="password" name="password" placeholder="Password" ng-model="$ctrl.user.password"/>
 
-                <button class="login-submit-login">
+                <button class="login-submit-login" ng-click="$ctrl.login()">
                     Login
                 </button>
                 <button class="login-submit-register" ui-sref="auth.register">

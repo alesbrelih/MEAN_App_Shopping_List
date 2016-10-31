@@ -33,6 +33,8 @@ function configureJwtPassport(passport){
     //sets secret to decrypt
     jwtOpt.secretOrKey = config.secret;
 
+    jwtOpt.ignoreExpiration = false;
+
     //sets strategy for authentication with jwt
     passport.use(new JwtStrategy(jwtOpt,function(jwtToken,done){
 
