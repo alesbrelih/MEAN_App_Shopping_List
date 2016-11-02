@@ -1,0 +1,9 @@
+<div class="toaster-message" ng-class="$ctrl.toastCfg.type" ng-click="$ctrl.removeToaster($ctrl.toastCfg.index)">
+	<i ng-show="$ctrl.toastCfg.type=='alert'" class="fa fa-bell" aria-hidden="true"></i>
+	<i ng-show="$ctrl.toastCfg.type=='warning'" class="fa fa-exclamation" aria-hidden="true"></i>
+	<i ng-show="$ctrl.toastCfg.type=='success'" class="fa fa-check" aria-hidden="true"></i>
+	<span class="toaster-text">
+      {{$ctrl.toastCfg.message}}
+    </span>
+
+</div>

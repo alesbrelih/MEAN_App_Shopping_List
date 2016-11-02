@@ -6,16 +6,16 @@
 
     //controller function
 
-    function ListController(DialogService,ItemsService,$state,AuthService)
+    function ListController(DialogService,ItemsService,$state,AuthService,ToasterService)
     {
         //controller reference, good for async so this value isn't moved in future references
         var ctrl = this;
 
+        ctrl.modalDialog = DialogService;
+
         ctrl.logout = function(){
             AuthService.LogoutUser();
         };
-
-        ctrl.modalDialog = DialogService;
 
         //get all items in db using angular factory - query method
         ctrl.ItemsToBuy = ItemsService.query();
@@ -53,8 +53,7 @@
         //TODO: create error callback function when error removing items from db
         
         function successfulBuy(){
-            ctrl.modalDialog.setType("message","Selected item/s were successufuly bought.");
-            ctrl.modalDialog.showDialog();
+            ToasterService.Add("success", "Item was successfully bought.");
         }
 
         // action when we buy items -> click on anchor right
@@ -77,7 +76,7 @@
         templateUrl: "static/app/list/item-list.html",
 
         //controller and dependencies for controller
-        controller: ["DialogService","ItemsService","$state","AuthService",ListController]
+        controller: ["DialogService","ItemsService","$state","AuthService","ToasterService",ListController]
     });
 
 })(window.angular);

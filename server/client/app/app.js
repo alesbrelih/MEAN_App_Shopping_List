@@ -3,7 +3,7 @@
     // Main angular app
     ///////////////////////////////////////////////////
 
-    var dependencies = ["shoppingList.services","ui.router","shoppingListApp.validators","ngAnimate"];
+    var dependencies = ["shoppingList.services","ui.router","shoppingListApp.validators","ngAnimate","abToaster.component"];
 
     angular.module("shoppingListApp", dependencies);
 

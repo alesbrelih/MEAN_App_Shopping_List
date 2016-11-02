@@ -30,6 +30,25 @@ $red-darkest: darken($color: $red-standard, $amount: 30%);
 //main bg color
 $background-body: #232323;
 
+
+//color variables to toasters
+$light-gray-toaster:#eee;
+$dark-gray-toaster:#333;
+
+$white-toaster:#fff;
+
+$dark-red-toaster:#660000;
+$red-toaster:#990000;
+$light-red-toaster:#ff0000;
+
+$dark-blue-toaster:#003366;
+$blue-toaster:#3333ff;
+$light-blue-toaster:#3399cc;
+
+$dark-green-toaster:#006600;
+$green-toaster:#009900;
+$light-green-toaster:#66ff66;
+
 //font family variables
 $default-font: 'Asap', sans-serif;
 $font-awesome: 'FontAwesome';

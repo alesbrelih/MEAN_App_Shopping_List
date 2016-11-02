@@ -3,7 +3,7 @@
     //////////////////////////////////////////////////
 (function(angular){
 
-    function ShoppingListHttpInterceptor($q,JwtService,$rootScope){
+    function ShoppingListHttpInterceptor($q,JwtService,$rootScope,ToasterService){
 
         return {
             //add header with token on every request if token is present
@@ -21,6 +21,7 @@
             "responseError":function(response){
                 if (response.status === 401){
                     $rootScope.$broadcast("unauthorized");
+                    ToasterService.Add("alert","Please login.");
                 }
 
                 return $q.reject(response);
@@ -28,7 +29,7 @@
         };
     }
 
-    ShoppingListHttpInterceptor.$inject = ["$q","JwtService","$rootScope"];
+    ShoppingListHttpInterceptor.$inject = ["$q","JwtService","$rootScope","ToasterService"];
 
     angular.module("shoppingList.services.httpinterceptor",[]).factory("HttpIntercept",ShoppingListHttpInterceptor);
 

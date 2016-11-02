@@ -4,7 +4,7 @@
 // Adding items controller
 /////////////////////////////////////////////
 
-    function AddController(DialogService,ItemsService,$state){
+    function AddController(DialogService,ItemsService,$state,ToasterService){
         var ctrl = this;
         ctrl.modalDialog = DialogService;
 
@@ -70,16 +70,14 @@
             //save to DB
             ctrl.currentlyEditedItem.$update(function(){
                 //callback dialog that shows it was successfully saved
-                ctrl.modalDialog.setType("message", ctrl.currentlyEditedItem.itemName + " updated successfully!");
-                ctrl.modalDialog.showDialog();
+                ToasterService.Add("alert", "Item updated successfully!");
                 clearSelected(true);
             },
             function(err){
                 //error handler 
                 if(err)
                     {
-                    ctrl.modalDialog.setType("warningMessage", "Error updating item: " + err.message);
-                    ctrl.modalDialog.showDialog();
+                    ToasterService.Add("warning", "Error updating item!");
                 }
             });
 
@@ -104,8 +102,7 @@
         function deleteItemInDb(){
             ctrl.currentlyEditedItem.$delete(function(item){
                 //success callback
-                ctrl.modalDialog.setType("message","Item successfully deleted.");
-                ctrl.modalDialog.showDialog();
+                ToasterService.Add("warning","Item successfully deleted.");
 
                 //remove item from list
                 var itemIndex = ctrl.existingItems.indexOf(item);
@@ -116,11 +113,9 @@
             {
                 if(err)
                 {
-                    ctrl.modalDialog.setType("warningMessage","Error: "+err.message);
-                    ctrl.modalDialog.showDialog();   
+                    ToasterService.Add("warning","Error: "+err.message); 
                 }
-                ctrl.modalDialog.setType("warningMessage","Error");
-                ctrl.modalDialog.showDialog();      
+                ToasterService.Add("warning","Error!");      
             });
         }
 
@@ -148,9 +143,8 @@
             newItem.$save(function(item){
                 //successfull callback
                 
-                //show dialog
-                ctrl.modalDialog.setType("message","Item successfully saved!");
-                ctrl.modalDialog.showDialog();
+                //show toaster
+                ToasterService.Add("success","Item successfully saved.");
 
                 //add item to list
                 ctrl.existingItems.push(item);
@@ -159,12 +153,10 @@
                 //if err show err
                 if(err)
                 {
-                    ctrl.modalDialog.setType("warningMessage","Error: "+err.message);
-                    ctrl.modalDialog().showDialog();
+                    ToasterService.Add("warning","Error: "+err.message);
                 }
                 else{
-                    ctrl.modalDialog.setType("warningMessage","Error");
-                    ctrl.modalDialog.showDialog();
+                    ToasterService.Add("warning","Error!");
                 }
             });
         }
@@ -196,7 +188,7 @@
 
     app.component("modifyItems",{
         templateUrl: "static/app/add/add-item.html",
-        controller: ["DialogService","ItemsService","$state",AddController]
+        controller: ["DialogService","ItemsService","$state","ToasterService",AddController]
     });
 
 })(window.angular);

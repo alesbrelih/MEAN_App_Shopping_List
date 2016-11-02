@@ -557,7 +557,115 @@ modal-view .modal-content .footer button.alert:hover {
   background-color: ligthen(orange, 0.9);
 }
 
-/* line 18, ../../compass-sass/sass/css.scss */
+/* line 2, ../../compass-sass/sass/toaster-component/_toasters.scss */
+ab-toasters {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 18, ../../compass-sass/sass/toaster-component/_toasters.scss */
+ab-toast-msg.ng-animate.ng-enter {
+  animation: 1.5s fadeInToast;
+}
+/* line 22, ../../compass-sass/sass/toaster-component/_toasters.scss */
+ab-toast-msg.ng-animate.ng-leave {
+  animation: 1.5s fadeOutToast;
+}
+
+/* line 30, ../../compass-sass/sass/toaster-component/_toasters.scss */
+.toaster-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  border-radius: 3px;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.2em;
+  max-width: 300px;
+  box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #333;
+  transition: all 150ms ease;
+}
+/* line 61, ../../compass-sass/sass/toaster-component/_toasters.scss */
+.toaster-message:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+}
+/* line 67, ../../compass-sass/sass/toaster-component/_toasters.scss */
+.toaster-message i.fa-exclamation, .toaster-message i.fa-bell,
+.toaster-message i.fa-check, .toaster-message i.fa-pencil {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100px;
+  font-size: 1.8em;
+  text-align: center;
+  flex-grow: 1;
+}
+/* line 76, ../../compass-sass/sass/toaster-component/_toasters.scss */
+.toaster-message i.fa-exclamation {
+  font-size: 2.5em;
+}
+/* line 81, ../../compass-sass/sass/toaster-component/_toasters.scss */
+.toaster-message .toaster-text {
+  padding: 20px 20px 20px 0px;
+  font-size: 1.1em;
+}
+/* line 87, ../../compass-sass/sass/toaster-component/_toasters.scss */
+.toaster-message i.fa-times {
+  align-self: flex-start;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+/* line 94, ../../compass-sass/sass/toaster-component/_toasters.scss */
+.toaster-message.warning {
+  background-color: #990000;
+  box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #990000;
+}
+/* line 98, ../../compass-sass/sass/toaster-component/_toasters.scss */
+.toaster-message.success {
+  background-color: #006600;
+  box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #006600;
+}
+/* line 102, ../../compass-sass/sass/toaster-component/_toasters.scss */
+.toaster-message.alert {
+  background-color: #003366;
+  box-shadow: 0px 0px 0px 2px #fff, 0px 0px 0px 4px #003366;
+}
+
+@media (max-width: 500px) {
+  /* line 111, ../../compass-sass/sass/toaster-component/_toasters.scss */
+  ab-toasters {
+    left: 30px;
+    bottom: 30px;
+    right: 30px;
+    font-size: 0.8em;
+  }
+  /* line 116, ../../compass-sass/sass/toaster-component/_toasters.scss */
+  ab-toasters .toaster-message {
+    margin: 0px;
+  }
+}
+@keyframes fadeInToast {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOutToast {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/* line 20, ../../compass-sass/sass/css.scss */
 modify-items {
   display: flex;
   justify-content: center;
@@ -566,7 +674,7 @@ modify-items {
   flex-direction: column;
 }
 
-/* line 25, ../../compass-sass/sass/css.scss */
+/* line 27, ../../compass-sass/sass/css.scss */
 item-list {
   display: flex;
   justify-content: center;
@@ -575,7 +683,7 @@ item-list {
   flex-direction: column;
 }
 
-/* line 33, ../../compass-sass/sass/css.scss */
+/* line 35, ../../compass-sass/sass/css.scss */
 body {
   background-color: #232323;
   display: flex;
@@ -588,7 +696,7 @@ body {
   font-size: 16px;
 }
 
-/* line 47, ../../compass-sass/sass/css.scss */
+/* line 49, ../../compass-sass/sass/css.scss */
 .main-content {
   background-color: #eee;
   width: 960px;
@@ -598,22 +706,22 @@ body {
   border-radius: 10px;
   border: 2px solid #777;
 }
-/* line 61, ../../compass-sass/sass/css.scss */
+/* line 63, ../../compass-sass/sass/css.scss */
 .main-content .main-title {
   text-align: center;
 }
-/* line 66, ../../compass-sass/sass/css.scss */
+/* line 68, ../../compass-sass/sass/css.scss */
 .main-content .main-title h1 {
   color: #04AB1D;
   font-size: 3em;
   position: relative;
 }
-/* line 71, ../../compass-sass/sass/css.scss */
+/* line 73, ../../compass-sass/sass/css.scss */
 .main-content .main-title h1 span {
   background-color: #eee;
   padding: 20px;
 }
-/* line 78, ../../compass-sass/sass/css.scss */
+/* line 80, ../../compass-sass/sass/css.scss */
 .main-content .main-title h1:before {
   content: "";
   margin: 0 auto;
@@ -625,7 +733,7 @@ body {
   border-top: 3px solid #aaaaaa;
   z-index: -1;
 }
-/* line 93, ../../compass-sass/sass/css.scss */
+/* line 95, ../../compass-sass/sass/css.scss */
 .main-content .main-body {
   padding: 10px 50px;
   display: flex;

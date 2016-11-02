@@ -5,7 +5,7 @@
     /////////////////////////////////////////////
 
     //controller
-    function AuthenticationService($http,JwtService,$state){
+    function AuthenticationService($http,JwtService,$state,ToasterService){
 
         
         //register new user function
@@ -19,11 +19,21 @@
 
                 //save it to local
                 JwtService.SaveToken(token);
+                ToasterService.Add("success","Account successfully created.");
                 
+                $state.go("home");
+           
             },
             function(err){
-                //todo:catch multiple types of error
-                console.log(err);
+                if(err.data.code==11000)
+                {
+                    ToasterService.Add("warning","User with this email alredy exists!");
+                }
+                else{
+                    ToasterService.Add("warning","Error registering user!");
+                }
+               
+                
             });
         }
 
@@ -35,10 +45,12 @@
 
                 JwtService.SaveToken(token);
 
+
+                ToasterService.Add("succes","Login successfull.");
                 $state.go("home");
 
             },function(err){
-                console.warn(err);
+                ToasterService.Add("warning","Error logging in: "+err.data.message);
             });
         }
 
@@ -46,7 +58,9 @@
         function LogoutUserFunction(){
 
             JwtService.RemoveToken();
-            
+
+
+            ToasterService.Add("alert","Logged out.");
         }
 
         
@@ -64,7 +78,7 @@
         };
     }
 
-    AuthenticationService.$inject = ["$http","JwtService","$state"];
+    AuthenticationService.$inject = ["$http","JwtService","$state","ToasterService"];
 
     angular.module("shoppingList.services.authentication",["shoppingList.services.jwt"]).factory("AuthService",AuthenticationService);
 

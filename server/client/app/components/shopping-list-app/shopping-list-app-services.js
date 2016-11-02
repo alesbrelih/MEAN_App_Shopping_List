@@ -3,7 +3,8 @@
     angular.module("shoppingList.services",
     ["shoppingList.services.dialogService",
     "shoppingList.services.itemservice","shoppingList.services.authentication",
-    "shoppingList.services.httpinterceptor"]);
+    "shoppingList.services.httpinterceptor",
+    "toasterServiceModule"]);
 
 })(window.angular);
 

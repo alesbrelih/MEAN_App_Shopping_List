@@ -59,6 +59,7 @@ router.post("/register",function(req,res){
     var password_body = req.body.password;
     var name_body = req.body.name;
 
+
     //create new user
     var newUser = new User(
         {
@@ -73,7 +74,8 @@ router.post("/register",function(req,res){
     //save new user
     newUser.save(function(err,user){
         if(err){ //error saving
-            res.status(500).send(err);
+            res.status(400).send(err);
+            // console.log(err);
         }
         else{
             var token = user.generateJwt();

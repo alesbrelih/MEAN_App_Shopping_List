@@ -1,7 +1,7 @@
 (function(angular){
 
 
-    function UserLoginController(AuthService,$state){
+    function UserLoginController(AuthService){
         var ctrl = this;
 
         ctrl.user = {
@@ -15,7 +15,7 @@
 
     }
 
-    UserLoginController.$inject = ["AuthService","$state"];
+    UserLoginController.$inject = ["AuthService"];
 
     
     var app = angular.module("shoppingListApp");
