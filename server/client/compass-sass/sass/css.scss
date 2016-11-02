@@ -63,31 +63,60 @@ body{
     .main-title {
 
         //main title centered
-        text-align: center;
+        
 
         h1{
             //h1 color
             color:$green-main;
             font-size:3em;
             position: relative;
+            text-align: center;
+            margin-top:0px;
+            
             span{
                 //hiding before line with background
                 background-color:$gray-light;
                 padding:20px;
+                padding-top:0px;
 
+                
             }
 
-            &:before{ //line in the middle of title
-                content:"";
-                margin:0 auto;
-                left:0;
-                right:0;
-                top:50%;
-                position:absolute;
-                width:90%;
-                border-top: 3px solid $gray-medium;
-                z-index:-1;
+            //horizonal line in middle of title
+            // &:before{ //line in the middle of title
+            //     content:"";
+            //     margin:0 auto;
+            //     left:0;
+            //     right:0;
+            //     top:50%;
+            //     position:absolute;
+            //     width:90%;
+            //     border-top: 3px solid $gray-medium;
+            //     z-index:0;
 
+            // }
+        }
+
+        .profile-info{
+            text-align: right;
+            margin:20px 50px 0px 0;
+
+            color:green;
+
+            a{
+                color:green;
+
+                &.logout{
+
+                font-size:0.6em;
+                padding-left:10px;
+                color:$gray-dark;
+
+                }
+                &.profile{
+                    text-decoration: none;
+                    
+                }
             }
         }
         

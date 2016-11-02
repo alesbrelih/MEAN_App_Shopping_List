@@ -706,34 +706,41 @@ body {
   border-radius: 10px;
   border: 2px solid #777;
 }
-/* line 63, ../../compass-sass/sass/css.scss */
-.main-content .main-title {
-  text-align: center;
-}
 /* line 68, ../../compass-sass/sass/css.scss */
 .main-content .main-title h1 {
   color: #04AB1D;
   font-size: 3em;
   position: relative;
+  text-align: center;
+  margin-top: 0px;
 }
-/* line 73, ../../compass-sass/sass/css.scss */
+/* line 76, ../../compass-sass/sass/css.scss */
 .main-content .main-title h1 span {
   background-color: #eee;
   padding: 20px;
+  padding-top: 0px;
 }
-/* line 80, ../../compass-sass/sass/css.scss */
-.main-content .main-title h1:before {
-  content: "";
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  top: 50%;
-  position: absolute;
-  width: 90%;
-  border-top: 3px solid #aaaaaa;
-  z-index: -1;
+/* line 100, ../../compass-sass/sass/css.scss */
+.main-content .main-title .profile-info {
+  text-align: right;
+  margin: 20px 50px 0px 0;
+  color: green;
 }
-/* line 95, ../../compass-sass/sass/css.scss */
+/* line 106, ../../compass-sass/sass/css.scss */
+.main-content .main-title .profile-info a {
+  color: green;
+}
+/* line 109, ../../compass-sass/sass/css.scss */
+.main-content .main-title .profile-info a.logout {
+  font-size: 0.6em;
+  padding-left: 10px;
+  color: #777;
+}
+/* line 116, ../../compass-sass/sass/css.scss */
+.main-content .main-title .profile-info a.profile {
+  text-decoration: none;
+}
+/* line 124, ../../compass-sass/sass/css.scss */
 .main-content .main-body {
   padding: 10px 50px;
   display: flex;

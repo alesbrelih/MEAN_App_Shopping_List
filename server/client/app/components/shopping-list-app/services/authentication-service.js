@@ -5,8 +5,11 @@
     /////////////////////////////////////////////
 
     //controller
-    function AuthenticationService($http,JwtService,$state,ToasterService){
+    function AuthenticationService($http,JwtService,$state,ToasterService,$rootScope){
 
+        var _profile = {
+            display: ""
+        };
         
         //register new user function
         function RegisterUserFunction(userCredentials){
@@ -21,6 +24,7 @@
                 JwtService.SaveToken(token);
                 ToasterService.Add("success","Account successfully created.");
                 
+                $rootScope.$broadcast("register");
                 $state.go("home");
            
             },
@@ -46,7 +50,11 @@
                 JwtService.SaveToken(token);
 
 
-                ToasterService.Add("succes","Login successfull.");
+                ToasterService.Add("success","Login successfull.");
+                
+                //broadcast that forces header to get profile nae
+                $rootScope.$broadcast("login");
+
                 $state.go("home");
 
             },function(err){
@@ -58,13 +66,26 @@
         function LogoutUserFunction(){
 
             JwtService.RemoveToken();
-
-
+            $rootScope.$broadcast("logout");
+            $state.go("auth.login");
             ToasterService.Add("alert","Logged out.");
         }
 
         
-        
+        function GetProfileInfoFunction(){
+            $http.post("http://localhost:8001/api/user/profile")
+            .then(function(success){
+                var user = success.data;
+                if(user.name){
+                    _profile.display = user.name;
+                }
+                else{
+                    _profile.display = user.email;
+                }
+            });
+
+            
+        }
 
 
         //return singleton
@@ -73,12 +94,14 @@
             RegisterUser: RegisterUserFunction,
             LoginUser: LoginUserFunction,
             LogoutUser: LogoutUserFunction,
-            IsLoggedIn: JwtService.IsLoggedIn()
+            IsLoggedIn: JwtService.IsLoggedIn(),
+            GetProfileInfo: GetProfileInfoFunction,
+            ProfileName : _profile
 
         };
     }
 
-    AuthenticationService.$inject = ["$http","JwtService","$state","ToasterService"];
+    AuthenticationService.$inject = ["$http","JwtService","$state","ToasterService","$rootScope"];
 
     angular.module("shoppingList.services.authentication",["shoppingList.services.jwt"]).factory("AuthService",AuthenticationService);
 

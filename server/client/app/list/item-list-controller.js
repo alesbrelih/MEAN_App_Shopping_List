@@ -13,10 +13,6 @@
 
         ctrl.modalDialog = DialogService;
 
-        ctrl.logout = function(){
-            AuthService.LogoutUser();
-        };
-
         //get all items in db using angular factory - query method
         ctrl.ItemsToBuy = ItemsService.query();
         

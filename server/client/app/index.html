@@ -10,15 +10,17 @@
 
 <body>
 	<div class="main-content" ng-controller="MainCtrl">
-		<div class="main-title">
-			<h1><span>Buy List</span></h1>
-		</div>
+		<!--header component-->
+		<ab-sl-header></ab-sl-header>
+
+		<!--main body-->
 		<div class="main-body" ui-view>
 
 
 		</div>
 		
 	</div>
+	<!--toaster component-->
 	<ab-toasters>
 		
 	</ab-toasters>

@@ -8,6 +8,7 @@
 // Imports
 ////////////////////////////////
 
+
 //jwt strategy
 var JwtStrategy = require("passport-jwt").Strategy;
 

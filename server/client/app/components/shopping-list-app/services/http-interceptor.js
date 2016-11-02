@@ -18,9 +18,16 @@
             //if unauthorized response then broadcast
             //unauthorized which mainctrl picks up
             //and changes state to auth.login
+            
             "responseError":function(response){
                 if (response.status === 401){
+                    //unauthorized broadcast
                     $rootScope.$broadcast("unauthorized");
+
+                    //header gets profile name ""
+                    $rootScope.$broadcast("logout");
+
+                    //set toaster
                     ToasterService.Add("alert","Please login.");
                 }
 

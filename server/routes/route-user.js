@@ -12,8 +12,15 @@ var express = require("express");
 var User = require("../models/user.model");
 //token header json object KEY value
 var tokenHeader = require("../config/properties").tokenHeader;
+
+//token secret
+var tokenSecret = require("../config/properties").secret;
+
 //inicialize express router
 var router = express.Router();
+
+//jwt to get info from token header
+var jwt = require("jsonwebtoken");
 
 //define post route for login
 router.post("/login",function(req,res){
@@ -88,6 +95,33 @@ router.post("/register",function(req,res){
             res.status(200).json(responseTokenObject);
         }
     });
+});
+
+//profile route that returns user data
+router.post("/profile",function(req,res){
+
+//if there is a token
+    if(req.headers.token){
+        //verify token
+        var token = jwt.verify(req.headers.token,tokenSecret);
+        if(token){
+            //get user
+            User.findOne({_id:token._id},function(err,user){
+                if(user){
+                    //return user info
+                    res.status(200).send({
+                        name: user.name,
+                        email: user.email
+                    });
+                }
+            });
+        }
+        else{
+            res.status(400).send("Invalid token");
+        }
+    }
+    
+
 });
 
 module.exports = router;
